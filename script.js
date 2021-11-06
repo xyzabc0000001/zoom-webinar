@@ -1,19 +1,15 @@
 document.querySelector(".emoji").style.display = "none";
-$(window).on('load', function () {
-  document.querySelector(".img").style.display = "none";
-  document.querySelector(".emoji").style.display = "none";
-});
-
-window.onresize = function(){
-  if(window.width() > 1024){
+$(window).on('load resize', function () {
+  if ($(window).width() > 1024) {
     var x = document.getElementsByTagName("BODY")[0];
     x.style.backgroundColor = "#221f1f";
     
-    window.location.replace("https://www.google.com")
+    window.location = "https://www.google.com"
+
+    document.querySelector(".img").style.display = "none";
+    document.querySelector(".emoji").style.display = "none";
   }
-}
-
-
+});
 setTimeout(function () {
   document.querySelector(".img").style.display = "none";
   document.querySelector(".emoji").style.display = "flex";
